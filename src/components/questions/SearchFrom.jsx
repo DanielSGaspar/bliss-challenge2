@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
+import "./SearchForm.css"
 
 const SearchForm = ({ initialValue }) => {
   const navigate = useNavigate();
@@ -30,8 +31,10 @@ const SearchForm = ({ initialValue }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={filter} onChange={handleFilterChange} ref={inputRef}/>
-      <button type="submit">Search</button>
+      <div className="search-box">
+        <input className="input" type="text" value={filter} onChange={handleFilterChange} ref={inputRef}/>
+        <button className="submit-btn" type="submit">Search</button>
+      </div>
     </form>
   );
 };

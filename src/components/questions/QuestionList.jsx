@@ -1,7 +1,10 @@
 import { getQuestions } from "../../api/api";
 import SearchForm from "./SearchFrom";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, createSearchParams } from "react-router-dom";
+import Navbar from "./Navbar";
+import Question from "./Question";
+import "./QuestionList.css"
 
 const QuestionList = () => {
   console.log("Rendered Question List");
@@ -22,8 +25,8 @@ const QuestionList = () => {
     fetchQuestions();
   };
 
-  const handleQuestionClick = (questionId) => {
-    navigate(`/questions/${questionId}`)
+  const handleQuestionClick = (questionId, bgColorClass) => {
+    navigate(`/questions/${questionId}`, { state: { bgColorClass }})
   };
 
   const handleDismissClick = () => {
@@ -35,6 +38,10 @@ const QuestionList = () => {
     })
   };
 
+  const handleShareClick = () => {
+
+  };
+
   useEffect(() => {
     setQuestions([]);
     fetchQuestions();
@@ -42,23 +49,37 @@ const QuestionList = () => {
 
 
   return (
-    <div>
-      <h1>Your Questions</h1>
+    <div className="list-container">
+      <Navbar />
       <SearchForm initialValue={searchValue} />
       <ul>
-        {questions.map((question) => {
+        {questions.map((question, index) => {
+          // determine bg color
+          const bgColorClass = `bg-color-${index % 3 +1}`
+
           return (
             <li
               key={question.id}
-              onClick={() => handleQuestionClick(question.id)}
+              onClick={() => handleQuestionClick(question.id, bgColorClass)}
             >
-              {question.question}
+              <Question question={question} bgColorClass={bgColorClass}/>
             </li>
           )
         })}
       </ul>
-      <button onClick={handleLoadClick}>Load more</button>
-      <button onClick={handleDismissClick}>Dismiss</button>
+      <div className="load-btn-container">
+        <button className="load-btn" onClick={handleLoadClick}>Load more</button>
+      </div>
+      <button className="dismiss-btn" onClick={handleDismissClick}>
+        <div className="center-btn">
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </button>
+      <button className="share-btn" onClick={handleShareClick}>
+        <div className="center-btn">
+          <i class="fa-solid fa-share"></i>
+        </div>
+      </button>
     </div>
   )
 };

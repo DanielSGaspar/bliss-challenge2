@@ -1,0 +1,32 @@
+.home {
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://res.cloudinary.com/dq9svotov/image/upload/v1682246447/D06C51_3_dreefh.png");
+  height: 100vh;
+}
+
+.home-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px 0 25px;
+}
+
+.content{
+  text-align: center;
+}
+
+.home h1{
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 75px;
+}
+
+.home h2{
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 0px;
+}
