@@ -9,7 +9,7 @@ const RetryLoad = ({ checkApi }) => {
     <div className="loading-container">
       <div className="loader">
         <div className="reload-icon">
-          <i class="fa-solid fa-heart-crack"></i>
+          <i className="fa-solid fa-heart-crack"></i>
         </div>
         <div className="reload-txt">
           <h2>Service unavailable</h2>

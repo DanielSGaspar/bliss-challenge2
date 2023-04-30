@@ -1,10 +1,10 @@
-import { getQuestions } from "../../api/api";
-import SearchForm from "./SearchFrom";
+import { getQuestions } from "../../../api/api";
+import SearchForm from "../SearchForm/SearchFrom";
 import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, createSearchParams } from "react-router-dom";
-import Navbar from "./Navbar";
-import Question from "./Question";
-import "./QuestionList.css"
+import Navbar from "../Navbar/Navbar";
+import QuestionCard from "../QuestionCard/QuestionCard"
+import "../QuestionList/QuestionList.css"
 
 const QuestionList = () => {
   console.log("Rendered Question List");
@@ -62,7 +62,7 @@ const QuestionList = () => {
               key={question.id}
               onClick={() => handleQuestionClick(question.id, bgColorClass)}
             >
-              <Question question={question} bgColorClass={bgColorClass}/>
+              <QuestionCard question={question} bgColorClass={bgColorClass}/>
             </li>
           )
         })}

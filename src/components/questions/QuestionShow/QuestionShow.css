@@ -27,7 +27,7 @@
 
 .image-container {
   position: relative;
-  width: 100%; /* Adjust this value according to your design */
+  width: 100%;
   overflow: hidden;
 }
 
@@ -88,5 +88,5 @@
   font-weight: 500;
   font-size: 18px;
   border: solid white;
-  margin-top: 32px;;
+  margin: 32px 0;
 }

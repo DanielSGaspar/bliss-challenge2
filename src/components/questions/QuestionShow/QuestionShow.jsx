@@ -1,7 +1,7 @@
 import { useParams, useLocation } from "react-router-dom";
-import { getQuestion } from "../../api/api";
+import { getQuestion } from "../../../api/api";
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar/Navbar";
 import "./QuestionShow.css"
 
 const QuestionShow = () => {

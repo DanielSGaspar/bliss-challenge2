@@ -1,4 +1,4 @@
-import "./Question.css"
+import "./QuestionCard.css"
 
 const Question = ({ question, bgColorClass }) => {
 

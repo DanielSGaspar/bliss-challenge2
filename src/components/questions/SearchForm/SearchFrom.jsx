@@ -8,7 +8,8 @@ const SearchForm = ({ initialValue }) => {
   const inputRef = useRef();
 
   const handleFilterChange = (event) => {
-    setFilter(event.target.value)
+    const value = event.target.value
+    setFilter(value.toLowerCase())
   };
 
   const handleSubmit = (event) => {
