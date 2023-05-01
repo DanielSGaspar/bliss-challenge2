@@ -2,6 +2,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { getQuestion } from "../../../api/api";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
+import ShareScreen from "../../ShareScreen/ShareScreen";
 import "./QuestionShow.css"
 
 const QuestionShow = () => {
@@ -9,6 +10,7 @@ const QuestionShow = () => {
   const [question, setQuestion] = useState([]);
   const [choices, setChoices] = useState([]);
   const [totalVotes, setTotalVotes] = useState(0);
+  const [openShare, setOpenShare] = useState(false);
   const location = useLocation();
   const bgColorClass = location.state?.bgColorClass || "bg-color-2";
 
@@ -22,6 +24,10 @@ const QuestionShow = () => {
 
     const totalVotes = question.choices.reduce((sum, choice) => sum + choice.votes, 0);
     setTotalVotes(totalVotes);
+  };
+
+  const handleShareClick = () => {
+    setOpenShare(true);
   };
 
 
@@ -60,8 +66,9 @@ const QuestionShow = () => {
         </div>
       </div>
       <div className="center-btn">
-        <button className="share-btn-show">Share</button>
+        <button className="share-btn-show" onClick={handleShareClick}>Share</button>
       </div>
+      {openShare && <ShareScreen closeModal={setOpenShare}/>}
     </div>
   )
 };

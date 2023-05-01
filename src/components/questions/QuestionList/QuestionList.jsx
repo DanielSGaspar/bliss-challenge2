@@ -13,7 +13,7 @@ const QuestionList = () => {
   const [questions, setQuestions] = useState([]);
   const [searchParams] = useSearchParams();
   const [offset, setOffset] = useState(0);
-  const [openShare, setOpenShare] = useState(false)
+  const [openShare, setOpenShare] = useState(false);
   const searchValue = searchParams.get("filter");
   const navigate = useNavigate();
 
