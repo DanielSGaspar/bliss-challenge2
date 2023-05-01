@@ -1,10 +1,10 @@
 import './App.css';
 import { checkHealth } from './api/api';
-import LoadingScreen from './components/loading/LoadingScreen';
-import RetryLoad from './components/loading/RetryLoad';
+import LoadingScreen from './Components/Loading/LoadingScreen';
+import RetryLoad from './Components/Loading/RetryLoad';
 import { useState, useEffect, useCallback } from 'react';
 import ApiContext from './api/ApiContext';
-import Home from './components/home/Home';
+import Home from './Components/Home/Home';
 
 console.log("Rendered App");
 

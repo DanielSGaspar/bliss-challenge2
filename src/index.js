@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import QuestionList from './components/questions/QuestionList/QuestionList';
-import QuestionShow from './components/questions/QuestionShow/QuestionShow';
+import QuestionList from './Components/Questions/QuestionList/QuestionList';
+import QuestionShow from './Components/Questions/QuestionShow/QuestionShow';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

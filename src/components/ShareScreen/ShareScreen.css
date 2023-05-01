@@ -1,0 +1,48 @@
+.share-background {
+  background-color: rgba(33, 33, 33, 0.536);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-form {
+  width: 85%;
+  text-align: center;
+}
+
+.share-form h1 {
+  margin-top: 10px;
+}
+
+.share-container {
+  background-color: #131313;
+  border-radius: 25px;
+  width: 75vw;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-input {
+  width: 100%;
+  padding: 0;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  border: solid white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.share-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}

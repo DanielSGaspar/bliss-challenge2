@@ -1,4 +1,4 @@
-import SearchForm from "../questions/SearchForm/SearchFrom";
+import SearchForm from "../Questions/SearchForm/SearchFrom";
 import './Home.css'
 
 const Home = () => {

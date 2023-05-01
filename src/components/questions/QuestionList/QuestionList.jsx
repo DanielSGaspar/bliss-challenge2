@@ -4,14 +4,16 @@ import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, createSearchParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import QuestionCard from "../QuestionCard/QuestionCard"
-import "../QuestionList/QuestionList.css"
+import "./QuestionList.css"
+import ShareScreen from "../../ShareScreen/ShareScreen";
 
 const QuestionList = () => {
   console.log("Rendered Question List");
 
   const [questions, setQuestions] = useState([]);
   const [searchParams] = useSearchParams();
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(0);
+  const [openShare, setOpenShare] = useState(false)
   const searchValue = searchParams.get("filter");
   const navigate = useNavigate();
 
@@ -39,7 +41,7 @@ const QuestionList = () => {
   };
 
   const handleShareClick = () => {
-
+    setOpenShare(true)
   };
 
   useEffect(() => {
@@ -72,14 +74,15 @@ const QuestionList = () => {
       </div>
       <button className="dismiss-btn" onClick={handleDismissClick}>
         <div className="center-btn">
-          <i class="fa-solid fa-x"></i>
+          <i className="fa-solid fa-x"></i>
         </div>
       </button>
       <button className="share-btn" onClick={handleShareClick}>
         <div className="center-btn">
-          <i class="fa-solid fa-share"></i>
+          <i className="fa-solid fa-share"></i>
         </div>
       </button>
+      {openShare && <ShareScreen closeModal={setOpenShare}/>}
     </div>
   )
 };
