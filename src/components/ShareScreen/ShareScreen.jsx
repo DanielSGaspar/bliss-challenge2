@@ -1,9 +1,14 @@
 import './ShareScreen.css'
 import { share } from '../../api/api';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const ShareScreen = ({ closeModal }) => {
   const [emailInput, setEmailInput] = useState("")
+  const shareRef = useRef();
+
+  useEffect(() => {
+    shareRef.current.focus()
+  }, [])
 
   const handleCancelClick = () => {
     closeModal(false)
@@ -30,10 +35,10 @@ const ShareScreen = ({ closeModal }) => {
         <form action="" className='share-form' onSubmit={handleSubmit}>
           <h1>Share with a friend</h1>
           <div>
-            <input type="text" className='email-input' placeholder='Email' value={emailInput} onChange={handleChange}/>
+            <input type="text" className='email-input' placeholder='Email' value={emailInput} onChange={handleChange} ref={shareRef}/>
             <div className="share-btn-container">
-              <button className="load-btn" onClick={handleCancelClick}>Cancel</button>
-              <button className="load-btn" type="submit">Share</button>
+              <button className="btn" onClick={handleCancelClick}>Cancel</button>
+              <button className="btn" type="submit">Share</button>
             </div>
           </div>
         </form>

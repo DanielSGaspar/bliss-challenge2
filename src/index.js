@@ -4,6 +4,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import QuestionList from './Components/Questions/QuestionList/QuestionList';
 import QuestionShow from './Components/Questions/QuestionShow/QuestionShow';
+import './index.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

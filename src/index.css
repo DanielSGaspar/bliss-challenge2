@@ -1,0 +1,34 @@
+h1 {
+  color: white;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 12px 30px;
+  background-color: #131313;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border: solid white;
+}
+
+.round-btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  padding: 0 20px 0 20px;
+  background-color: #13131399;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border: solid white;
+  font-size: 26px;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

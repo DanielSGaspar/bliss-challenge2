@@ -19,7 +19,7 @@ const Navbar = ({ back }) => {
           </div>
         </button>
       ) : null}
-      <h1>UniPoll</h1>
+      <h1 className="navbar-logo">UniPoll</h1>
     </div>
   );
 };

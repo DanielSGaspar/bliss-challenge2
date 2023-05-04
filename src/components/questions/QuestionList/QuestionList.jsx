@@ -69,15 +69,15 @@ const QuestionList = () => {
           )
         })}
       </ul>
-      <div className="load-btn-container">
-        <button className="load-btn" onClick={handleLoadClick}>Load more</button>
+      <div className="center-btn btn-margin">
+        <button className="btn" onClick={handleLoadClick}>Load more</button>
       </div>
-      <button className="dismiss-btn" onClick={handleDismissClick}>
+      <button className="round-btn dismiss-position" onClick={handleDismissClick}>
         <div className="center-btn">
           <i className="fa-solid fa-x"></i>
         </div>
       </button>
-      <button className="share-btn" onClick={handleShareClick}>
+      <button className="round-btn share-position" onClick={handleShareClick}>
         <div className="center-btn">
           <i className="fa-solid fa-share"></i>
         </div>

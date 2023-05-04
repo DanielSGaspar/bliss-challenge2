@@ -17,14 +17,14 @@
   text-align: center;
 }
 
-.home h1{
+.logo {
   color: white;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 75px;
 }
 
-.home h2{
+.subtitle {
   color: white;
   font-size: 25px;
   font-weight: 400;
