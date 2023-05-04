@@ -44,7 +44,7 @@ const ShareScreen = ({ closeModal }) => {
               ref={shareRef}
             />
             <div className='share-btn-container'>
-              <button className='btn' onClick={handleCancelClick}>Cancel</button>
+              <button className='btn' type='button' onClick={handleCancelClick}>Cancel</button>
               <button className='btn' type='submit'>Share</button>
             </div>
           </div>
