@@ -2,6 +2,8 @@ h1 {
   color: white;
 }
 
+/* Buttons */
+
 .btn {
   border-radius: 30px;
   padding: 12px 30px;
@@ -9,7 +11,7 @@ h1 {
   color: white;
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 24px;
   border: solid white;
 }
 
@@ -31,4 +33,18 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Question Card BG */
+
+.bg-color-1 {
+  background-color: #61B88F;
+}
+
+.bg-color-2 {
+  background-color: #D06B50;
+}
+
+.bg-color-3 {
+  background-color: #CCCF4F;
 }

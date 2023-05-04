@@ -1,3 +1,5 @@
+/* Question Display */
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -12,6 +14,8 @@ ul {
   min-height: 100%;
   color: white;
 }
+
+/* Button Positions */
 
 .btn-margin{
   margin-bottom: 28px;

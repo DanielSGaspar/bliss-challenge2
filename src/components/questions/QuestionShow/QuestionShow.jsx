@@ -66,7 +66,7 @@ const QuestionShow = () => {
         </div>
       </div>
       <div className="center-btn">
-        <button className="share-btn-show" onClick={handleShareClick}>Share</button>
+        <button className="btn" onClick={handleShareClick}>Share</button>
       </div>
       {openShare && <ShareScreen closeModal={setOpenShare}/>}
     </div>

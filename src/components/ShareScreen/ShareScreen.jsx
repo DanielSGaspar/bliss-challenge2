@@ -30,15 +30,22 @@ const ShareScreen = ({ closeModal }) => {
   };
 
   return (
-    <div className="share-background">
-      <div className="share-container">
-        <form action="" className='share-form' onSubmit={handleSubmit}>
-          <h1>Share with a friend</h1>
+    <div className='share-background'>
+      <div className='share-container'>
+        <form action='' className='share-form' onSubmit={handleSubmit}>
+          <h1 className='share-title'>Share with a friend</h1>
           <div>
-            <input type="text" className='email-input' placeholder='Email' value={emailInput} onChange={handleChange} ref={shareRef}/>
-            <div className="share-btn-container">
-              <button className="btn" onClick={handleCancelClick}>Cancel</button>
-              <button className="btn" type="submit">Share</button>
+            <input
+              type='text'
+              className='email-input'
+              placeholder='Email'
+              value={emailInput}
+              onChange={handleChange}
+              ref={shareRef}
+            />
+            <div className='share-btn-container'>
+              <button className='btn' onClick={handleCancelClick}>Cancel</button>
+              <button className='btn' type='submit'>Share</button>
             </div>
           </div>
         </form>
