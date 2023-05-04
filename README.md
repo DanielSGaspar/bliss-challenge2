@@ -18,7 +18,7 @@ This is a coding challenge for Bliss Applications, where the task is to create a
 
 - Responsiveness
 - Code readability and comments
-- CSS refactoring
+- CSS refactoring (Done)
 - Animations
 - Back button improvement
 
