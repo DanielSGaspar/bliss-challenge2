@@ -34,6 +34,7 @@ const QuestionList = () => {
   const handleDismissClick = () => {
     const filter = "";
     setQuestions([]);
+    setOffset(0);
     navigate({
       pathname: "/questions",
       search: `?${createSearchParams({ filter })}`

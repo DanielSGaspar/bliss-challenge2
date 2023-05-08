@@ -22,13 +22,17 @@ const SearchForm = ({ initialValue }) => {
     })
   };
 
+  useEffect (() => {
+    setFilter(initialValue)
+  }, [initialValue]);
+
   useEffect(() => {
     const whiteSpaceRegExp = /\s+/;
 
-    if (!filter || whiteSpaceRegExp.test(filter)) {
+    if (!initialValue || whiteSpaceRegExp.test(initialValue)) {
       inputRef.current.focus();
     }
-  }, [filter]);
+  }, [initialValue]);
 
   return (
     <form onSubmit={handleSubmit}>

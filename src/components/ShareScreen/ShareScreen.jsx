@@ -3,7 +3,9 @@ import { share } from '../../api/api';
 import { useState, useRef, useEffect } from 'react';
 
 const ShareScreen = ({ closeModal }) => {
-  const [emailInput, setEmailInput] = useState("")
+  const [emailInput, setEmailInput] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const shareRef = useRef();
 
   useEffect(() => {
@@ -19,21 +21,30 @@ const ShareScreen = ({ closeModal }) => {
     setEmailInput(value.toLowerCase())
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailInput;
     const url = window.location.href;
-    console.log(url);
-    console.log(email);
-    share(email, url);
-    closeModal(false);
+    try {
+      await share(email, url);
+      setSuccessMessage("Successfully shared!");
+      setIsSubmitted(true);
+      setTimeout(() => {
+        closeModal(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Error sharing the URL:", error);
+      setSuccessMessage("Failed to share. Please try again.");
+    }
   };
 
   return (
     <div className='share-background'>
       <div className='share-container'>
-        <form action='' className='share-form' onSubmit={handleSubmit}>
+        {!isSubmitted ? (
+          <form action='' className='share-form' onSubmit={handleSubmit}>
           <h1 className='share-title'>Share with a friend</h1>
+          {successMessage && <p style={{color: 'white'}}className='success-message'>{successMessage}</p>}
           <div>
             <input
               type='text'
@@ -49,6 +60,12 @@ const ShareScreen = ({ closeModal }) => {
             </div>
           </div>
         </form>
+        ) : (
+          <div className='success-container'>
+            <h1 className='share-title'>{successMessage}</h1>
+          </div>
+        )}
+
       </div>
     </div>
   )
