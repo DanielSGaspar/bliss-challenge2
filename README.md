@@ -6,12 +6,12 @@ This is a coding challenge for Bliss Applications, where the task is to create a
 
 - Search for questions
 - View question details and answer choices
-- Vote on answer choices (Feature to be added)
+- Vote on answer choices
 
 ### Features to be added
 
 - Share functionality and share screen (Done)
-- Vote functionality
+- Vote functionality (Done)
 - Connectivity screen
 
 ### Improvements needed

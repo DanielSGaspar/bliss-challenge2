@@ -68,15 +68,14 @@ const QuestionShow = () => {
           <ul>
             {choices.map((choice, index) => {
               const percentage = (choice.votes / totalVotes * 100)
-              console.log("This is the percentage");
-              console.log(percentage);
+              // percentage does not get calculated correctly after voting due to api inconcistency
               return <li className="choice-list-show" key={index}>
                 <div className="progress-container">
                   <div className="progress" style={{width: `${percentage}%`}}></div>
                 </div>
                 <div className="choice" onClick={() => handleVote(index)}>
                   <h2>{choice.choice}</h2>
-                  <h2>{choice.votes}votes</h2>
+                  <h2>{choice.votes} votes</h2>
                 </div>
               </li>
             })}
