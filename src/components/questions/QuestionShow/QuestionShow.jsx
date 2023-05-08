@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
-import { getQuestion } from "../../../api/api";
+import { getQuestion, updateVote } from "../../../api/api";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import ShareScreen from "../../ShareScreen/ShareScreen";
@@ -30,6 +30,24 @@ const QuestionShow = () => {
     setOpenShare(true);
   };
 
+  const handleVote = async (choiceIndex) => {
+    console.log(choices);
+    const updatedChoices = choices.map((choice, index) => {
+      if (index === choiceIndex) {
+        return {...choice, votes: choice.votes + 1}
+      }
+      return choice;
+    });
+
+    console.log(updatedChoices);
+
+    const newChoices = await updateVote(id, updatedChoices);
+    if (newChoices) {
+      setChoices(newChoices);
+      setTotalVotes(totalVotes + 1)
+    }
+  }
+
 
   useEffect(() => {
     fetchQuestion();
@@ -56,7 +74,7 @@ const QuestionShow = () => {
                 <div className="progress-container">
                   <div className="progress" style={{width: `${percentage}%`}}></div>
                 </div>
-                <div className="choice">
+                <div className="choice" onClick={() => handleVote(index)}>
                   <h2>{choice.choice}</h2>
                   <h2>{choice.votes}votes</h2>
                 </div>
