@@ -2,6 +2,8 @@ import axios from "axios";
 
 const baseURL = "https://private-anon-233be48b15-blissrecruitmentapi.apiary-mock.com"
 
+// Check API health
+
 export const checkHealth = async () => {
   try {
     const response = await axios.get(`${baseURL}/health`);
@@ -10,6 +12,8 @@ export const checkHealth = async () => {
     return false;
   }
 };
+
+// Get Question List
 
 export const getQuestions = async (limit, offset, filter) => {
   try {
@@ -27,6 +31,8 @@ export const getQuestions = async (limit, offset, filter) => {
   }
 };
 
+// Get Question Details
+
 export const getQuestion = async (id) => {
   try {
     const response = await axios.get(`${baseURL}/questions/${id}`);
@@ -36,6 +42,8 @@ export const getQuestion = async (id) => {
     return [];
   }
 };
+
+// Share screen
 
 export const share = async (email, url) => {
   const shareUrl = `${baseURL}/share?destination_email=${email}&content_url=${url}`;
@@ -50,5 +58,19 @@ export const share = async (email, url) => {
   } catch (error) {
     console.error("Error sharing:", error);
     return { success: false, error: "An error occurred while sharing. Please try again." };
+  }
+};
+
+// Vote
+
+export const updateVote = async (questionId, updatedChoices) => {
+  try {
+    const response = await axios.put(`${baseURL}/questions/${questionId}`, {
+      choices: updatedChoices
+    });
+    return response.data.choices
+  } catch (error) {
+    console.error("Error updating vote count:", error);
+    return null;
   }
 };

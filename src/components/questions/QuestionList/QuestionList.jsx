@@ -8,8 +8,6 @@ import "./QuestionList.css"
 import ShareScreen from "../../ShareScreen/ShareScreen";
 
 const QuestionList = () => {
-  console.log("Rendered Question List");
-
   const [questions, setQuestions] = useState([]);
   const [searchParams] = useSearchParams();
   const [offset, setOffset] = useState(0);
