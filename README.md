@@ -12,7 +12,7 @@ This is a coding challenge for Bliss Applications, where the task is to create a
 
 - Share functionality and share screen (Done)
 - Vote functionality (Done)
-- Connectivity screen
+- Connectivity screen (Done)
 
 ### Improvements needed
 
