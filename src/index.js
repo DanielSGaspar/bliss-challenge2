@@ -4,6 +4,8 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import QuestionList from './Components/Questions/QuestionList/QuestionList';
 import QuestionShow from './Components/Questions/QuestionShow/QuestionShow';
+import { Detector } from 'react-detect-offline';
+import CheckConnection from './Components/Connection/CheckConnection';
 import './index.css';
 
 
@@ -27,5 +29,14 @@ const router = createBrowserRouter([
 
 
 root.render(
-  <RouterProvider router={router} />
+  <Detector
+    render ={({ online }) =>
+      online ? (
+        <RouterProvider router={router} />
+      ) : (
+        <CheckConnection />
+      )
+    }
+  />
+
 );

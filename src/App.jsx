@@ -25,7 +25,6 @@ function App() {
   }, [checkApi]);
 
   return (
-
     <ApiContext.Provider value={{ apiHealthy, setApiHealthy, checkApi }}>
       {loading? (
         <LoadingScreen />
@@ -35,7 +34,6 @@ function App() {
         <RetryLoad checkApi={checkApi} />
       )}
     </ApiContext.Provider>
-
   );
 }
 

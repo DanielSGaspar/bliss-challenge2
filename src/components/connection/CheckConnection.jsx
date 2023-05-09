@@ -1,18 +1,15 @@
-import { Detector } from "react-detect-offline";
+import "./CheckConnection.css"
 
-const CheckConnection = props => {
+const CheckConnection = () => {
   return(
-    <>
-      <Detector
-        render={({ online }) => (
-          online ? props.children:
-          <div>
-            <h1>No Connectioin</h1>
-            <h4>Please check your internet connection...</h4>
-          </div>
-        )}
-      />
-    </>
+    <div className="check-connection-container">
+      <div>
+        <div className="connection-icon">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <h1>It seems like you are offline. Please check your connection...</h1>
+      </div>
+    </div>
   );
 
 }
